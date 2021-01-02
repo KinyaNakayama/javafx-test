@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Top">
-   <children>
-      <TilePane fx:id="topPane" alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <TextArea fx:id="debugText" />
-            <Button fx:id="debugButton" mnemonicParsing="false" onMouseClicked="#handleDebugButtonClick" text="Button" />
-         </children>
-      </TilePane>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="800.0" minWidth="1280.0"
+            prefWidth="1280"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Top">
+
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <top>
+            <AnchorPane BorderPane.alignment="CENTER">
+                <Label alignment="CENTER" text="ツール" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <font>
+                        <Font size="64.0" />
+                    </font>
+                </Label>
+            </AnchorPane>
+        </top>
+        <left>
+            <AnchorPane BorderPane.alignment="CENTER" />
+        </left>
+        <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+                <children>
+                    <VBox fx:id="mainArea" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                </children>
+            </AnchorPane>
+        </center>
+        <right>
+            <AnchorPane BorderPane.alignment="CENTER">
+                <children>
+                    <VBox>
+                        <children>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label alignment="CENTER_RIGHT" text="ID:" />
+                                    <TextField GridPane.columnIndex="1" />
+                                    <Label alignment="CENTER_RIGHT" text="旧パスワード:" GridPane.rowIndex="2" />
+                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER_RIGHT" text="新パスワード:" GridPane.rowIndex="3" />
+                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                </children>
+                                <padding>
+                                    <Insets bottom="1.0" left="1.0" right="1.0" top="5.0" />
+                                </padding>
+                            </GridPane>
+                            <AnchorPane>
+                                <children>
+                                    <Button mnemonicParsing="false" text="一括実行" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                </children>
+                            </AnchorPane>
+                        </children>
+                    </VBox>
+                </children>
+            </AnchorPane>
+        </right>
+        <bottom>
+            <AnchorPane BorderPane.alignment="CENTER" />
+        </bottom>
+    </BorderPane>
 </AnchorPane>

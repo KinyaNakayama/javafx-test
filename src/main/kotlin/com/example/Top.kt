@@ -1,20 +1,28 @@
 package com.example
 
-import javafx.event.Event
 import javafx.fxml.FXML
-import javafx.scene.control.Button
-import javafx.scene.control.TextArea
-import jp.go.jpki.appli.JPKICryptAuthJNI
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import javafx.fxml.FXMLLoader
+import javafx.scene.layout.AnchorPane
+import javafx.scene.layout.Pane
+import javafx.scene.layout.VBox
 
 class Top {
-    @FXML
-    private lateinit var debugText: TextArea
+
+    companion object {
+        fun getInstance(): Pair<AnchorPane, Top> {
+            val loader = FXMLLoader(javaClass.getResource("/top.fxml"))
+            return Pair(loader.load(), loader.getController())
+        }
+    }
 
     @FXML
-    private lateinit var debugButton: Button
+    private lateinit var mainArea: VBox
 
+    fun appendDetail(detail: Pane) {
+        this.mainArea.children.add(detail);
+    }
+
+    /*
     fun handleDebugButtonClick(event: Event) {
         this.debugText.text = "do!\n"
 
@@ -35,4 +43,5 @@ class Top {
 
         this.debugText.text = bCert.toString()
     }
+     */
 }
